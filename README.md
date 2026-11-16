@@ -6,12 +6,13 @@ An end-to-end Machine Learning web service that predicts LLM inference latency u
 
 ## 📋 Table of Contents
 1. [Project Overview & Problem Statement](#-project-overview--problem-statement)
-2. [Solution Architecture](#-solution-architecture)
-3. [Project Structure](#-project-structure)
-4. [Getting Started & Local Installation](#-getting-started--local-installation)
-5. [Running the API Locally](#-running-the-api-locally)
-6. [Docker Containerization & Deployment](#-docker-containerization--deployment)
-7. [API Endpoints & Usage Example](#-api-endpoints--usage-example)
+2. [Dataset](#-dataset)
+3. [Solution Architecture](#-solution-architecture)
+4. [Project Structure](#-project-structure)
+5. [Getting Started & Local Installation](#-getting-started--local-installation)
+6. [Running the API Locally](#-running-the-api-locally)
+7. [Docker Containerization & Deployment](#-docker-containerization--deployment)
+8. [API Endpoints & Usage Example](#-api-endpoints--usage-example)
 
 ---
 
@@ -22,6 +23,14 @@ Large Language Model (LLM) serving costs and user experience heavily depend on i
 
 ### The Solution
 We built a supervised machine learning regression pipeline utilizing a **Random Forest Regressor** trained on historical inference runs. The pipeline takes request metadata (such as prompt tokens, completion tokens, cache hit tokens, TTFT, TPOT, and cost) and predicts the total latency (`predicted_total_latency_ms`). The model is exposed via a production-ready **FastAPI** application and fully containerized using **Docker** for reliable, reproducible deployment anywhere.
+
+---
+
+## 📊 Dataset
+
+The model is trained on historical inference logs and performance metrics tracking various request attributes and execution times. You can access and download the raw dataset used for this project on Kaggle:
+
+* **Kaggle Dataset:** [LLM Inference Logs and Performance Metrics](https://www.kaggle.com/datasets/bektursyn/llm-inference-logs-and-performance-metrics)
 
 ---
 
@@ -91,8 +100,8 @@ You can launch the FastAPI server directly on your host machine using **Uvicorn*
 uvicorn src.app:app --reload --host 127.0.0.1 --port 8000
 ```
 
-* **Interactive Swagger UI Docs:** Open `http://127.0.0.1:8000/docs` in your browser to test endpoints interactively.
-* **Alternative ReDoc UI:** Visit `http://127.0.0.1:8000/redoc`.
+- **Interactive Swagger UI Docs:** Open `http://127.0.0.1:8000/docs` in your browser to test endpoints interactively.
+- **Alternative ReDoc UI:** Visit `http://127.0.0.1:8000/redoc`.
 
 ---
 
@@ -120,7 +129,7 @@ Once running, open `http://127.0.0.1:8000/docs` in your browser. The API is now 
 ## 💡 API Usage & Example
 
 ### Endpoint
-* **`POST /predict`**: Accepts inference parameters and returns the predicted total latency in milliseconds.
+- **`POST /predict`**: Accepts inference parameters and returns the predicted total latency in milliseconds.
 
 ### Example Request (`cURL`)
 ```bash
