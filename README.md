@@ -1,4 +1,4 @@
-# LLM Inference Performance & Latency Prediction API
+# LLM Inference Performance & Latency Prediction 
 
 An end-to-end Machine Learning web service that predicts LLM inference latency using a trained Random Forest regressor, served via **FastAPI** and containerized with **Docker**.
 
@@ -55,7 +55,9 @@ llm-inference-performance-mlzoomcamp/
 ├── src/
 │   ├── app.py               # FastAPI application and routing logic
 │   └── train.py             # Model training script
-│
+├──notebooks
+   ├──01_exploratory_data_analysis.ipynb
+   └──02_modeling.ipynb
 ├── .dockerignore            # Files to exclude from Docker build context
 ├── .gitignore               # Git ignored files (virtualenvs, etc.)
 ├── Dockerfile               # Container definition for the API
