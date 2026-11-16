@@ -1,6 +1,4 @@
 # llm-inference-performance-mlzoomcamp
-Machine Learning Zoomcamp Midterm Project - LLM Inference Latency Prediction
-# LLM Inference Performance & Latency Prediction API
 
 An end-to-end Machine Learning web service that predicts LLM inference latency using a trained Random Forest regressor, served via **FastAPI** and containerized with **Docker**.
 
